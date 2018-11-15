@@ -1,13 +1,9 @@
 <%= link_to 'Add cocktail', new_cocktail_path %>
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
-
+<%#= link_to cocktail.name, cocktail_path(cocktail) %>
 
   <div class="container">
     <div class="row">
+      <div class="card-container">
       <% @cocktails.each do |cocktail| %>
         <div class="style card">
           <div class="wrapper" style="background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;">
@@ -31,5 +27,6 @@
           </div>
         </div>
       <% end  %>
+      </div>
     </div>
   </div>

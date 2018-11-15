@@ -20,3 +20,34 @@
       </div>
     </div>
   </div>
+
+
+<div class="wrapper-grey padded">
+      <div class="container">
+        <div class="row">
+          <% @cocktails.each do |cocktail| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="cardwrapper">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+                <div class="card-category"><%= link_to cocktail.name, cocktail_path(cocktail) %></div>
+                <img class="card-user avatar avatar-large" src="images/anne.jpg">
+                <a class="card-link" href="#" ></a>
+              </div>
+              <div class="card-footer">
+                <div class="controls">
+                  <a href="#"><i class="fa fa-star"></i></a></li>
+                  <a href="#"><i class="fa fa-heart"></i></a></li>
+                  <a href="#"><i class="fa fa-share"></i></a></li>
+                </div>
+                <div class="description">
+                  <h2>Anne's home</h2>
+                  <p>Charming room in Shanghai</p>
+                  <p><em>Updated on 18/11/01</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end  %>
+        </div>
+      </div>
+    </div>
