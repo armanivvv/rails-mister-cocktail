@@ -11,8 +11,11 @@
   </head>
 
   <body>
+      <%= render :partial => 'shared/navbar' %>
+      <%= render :partial => 'shared/banner' %>
     <h1>Mister Cocktail</h1>
     <%= yield %>
+    <%= render :partial => 'shared/footer' %>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>

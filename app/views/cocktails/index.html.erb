@@ -4,3 +4,32 @@
     <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
   <% end %>
 </ul>
+
+
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="style card">
+          <div class="wrapper" style="background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;">
+            <div class="header">
+              <ul class="menu-content">
+                <li>
+                  <a href="#" class="fa fa-bookmark-o"></a>
+                </li>
+                <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+              </ul>
+            </div>
+            <div class="data">
+              <div class="content">
+                <span class="category">Whiskey</span>
+                <h1 class="title"><a href="#"><%= cocktail.name %></a></h1>
+                <p class="text">The antsy bingers of Netflix will.</p>
+                <a href="#" class="button">Recipe</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end  %>
+    </div>
+  </div>

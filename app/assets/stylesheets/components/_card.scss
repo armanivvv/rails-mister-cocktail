@@ -1,0 +1,229 @@
+// /* Card design */
+// .card {
+//   flex: 1 1 auto;
+//   margin: 0px;
+//   border-radius: 1px;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+//   transition: all 0.3s ease;
+//   height: 180px;
+//   background-size: cover;
+//   color: white;
+//   position: relative;
+// }
+// .card:hover {
+//   margin-top: -5px;
+// }
+// .card-user {
+//   transform: translate(0, 20%);
+//   position: absolute;
+//   left: 10px;
+//   bottom: 0px;
+// }
+// .card-category {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+//   font-size: 14px;
+//   text-transform: uppercase;
+//   letter-spacing: 1px;
+//   font-weight: lighter;
+//   opacity: 0.9;
+//   padding: 5px 5px;
+//   border-radius: 3px;
+//   background-color: rgba(255, 255, 255,0.5);
+// }
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   width: 100%;
+//   z-index:2;
+//   background: black;
+//   opacity: 0;
+// }
+// .card-link:hover{
+//   opacity: 0.1;
+// }
+// .card-footer {
+//   padding: 5px;
+//   background-color: white;
+// }
+// .card-footer p {
+//   color: rgba(0,0,0,0.4);
+//   font-weight: lighter;
+//   font-size: 12px;
+// }
+// .card-footer .description {
+//   bottom: 10px;
+//   left: 0px;
+// }
+// .card-footer .description h2 {
+//   font-size: 16px;
+//   margin-top: 0px;
+//   margin-bottom: 0px;
+//   font-weight: bold;
+// }
+// .card-footer .description p {
+//   font-size: 14px;
+//   font-weight: lighter;
+//   opacity: 0.9;
+//   margin: 0px;
+// }
+// .card-footer .controls{
+//   display: flex;
+//   justify-content: flex-end;
+// }
+// .card-footer .controls i{
+//   padding: 0 10px;
+//   color: #3EC1D5;
+//   opacity: 0.5;
+// }
+// .card-footer .controls i:hover{
+//   opacity: 0.8;
+// }
+// .cardwrapper{
+//   margin: 20px 0px;
+// }
+
+// .wrapper-grey {
+//   background: #F4F4F4;
+// }
+
+
+// Base Card styles
+.card {
+  float: left;
+  padding: 0 1.7rem;
+  width: 35%;
+  .menu-content {
+    @include cf;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      display: inline-block;
+    }
+    a {
+      color: $white;
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      font-size: 10px;
+      font-weight: 700;
+      font-family: 'Open Sans';
+      transform: translate(-50%, 0);
+    }
+  }
+  .wrapper {
+    background-color: $white;
+    min-height: 340px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+    &:hover {
+      .data {
+        transform: translateY(0);
+      }
+    }
+  }
+  .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform 0.3s;
+    .content {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .category {
+    font-size: 12px;
+  }
+  .title {
+    margin-top: 10px;
+  }
+  .text {
+    height: 24px;
+    margin: 0;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+  input[type='checkbox']:checked + .menu-content {
+    transform: translateY(-60px);
+  }
+}
+
+// Style
+.style {
+  .wrapper {
+    // background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
+    &:hover {
+      .menu-content {
+        span {
+          transform: translate(-50%, -10px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .header {
+    @include cf;
+    color: $white;
+    padding: 1em;
+    .date {
+      float: left;
+      font-size: 12px;
+    }
+  }
+  .menu-content {
+    float: right;
+    li {
+      margin: 0 5px;
+      position: relative;
+    }
+    span {
+      transition: all 0.3s;
+      opacity: 0;
+    }
+  }
+  .data {
+    color: $white;
+    transform: translateY(calc(70px + 2em));
+  }
+  .title {
+    a {
+      color: $white;
+    }
+  }
+  .button {
+    display: block;
+    width: 100px;
+    margin: 3em auto 1em;
+    text-align: center;
+    font-size: 12px;
+    color: $white;
+    line-height: 1;
+    position: relative;
+    font-weight: 700;
+    &::after {
+      content: '\2192';
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: all 0.3s;
+    }
+    &:hover {
+      &::after {
+        transform: translate(5px, -50%);
+        opacity: 1;
+      }
+    }
+  }
+}
