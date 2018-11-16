@@ -7,24 +7,19 @@
       <div class="card-container">
       <% @cocktails.each do |cocktail| %>
         <div class="style card">
-          <div class="wrapper">
-          <div class="wrapperimage">
-            <%= cl_image_tag(cocktail.photo, width: 300, height: 340, crop: :fill) %>
-          </div>
+          <div class="wrapper" style="background: url('<%= cl_image_path (cocktail.photo) %>') center / cover no-repeat;">
             <div class="header">
               <ul class="menu-content">
-                <li>
-                  <a href="#" class="fa fa-bookmark-o"></a>
-                </li>
-                <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
-                <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i></a></li>
+                <li><a href="#"><i class="fas fa-heart"></i><span>18</span></a></li>
+                <li><a href="#"><i class="far fa-comment"></i><span><%= cocktail.reviews.count %></span></a></li>
               </ul>
             </div>
             <div class="data">
               <div class="content">
                 <span class="category"><%= cocktail.category %></span>
-                <h1 class="title"><a href="#"><%= cocktail.name %></a></h1>
-                <p class="text"><%= cocktail.description %></p>
+                <h1 class="title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h1>
+                <p class="text"><%= cocktail.description.first(40) %></p>
                 <a href="#" class="button">Recipe</a>
               </div>
             </div>

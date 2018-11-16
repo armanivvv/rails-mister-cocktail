@@ -6,4 +6,13 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses
   has_many :reviews
   accepts_nested_attributes_for :doses
+
+  def average_rating
+    average = 0
+    return average if reviews.count.zero?
+
+    average.to_f
+    reviews.each { |review| average += review.rating }
+    (average / reviews.count).floor
+  end
 end

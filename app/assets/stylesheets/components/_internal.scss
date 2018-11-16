@@ -1,0 +1,112 @@
+/* Layout */
+.main-content {
+  max-width: 600px;
+  padding: 1rem;
+  margin: 5rem auto 2rem;
+  > article {
+    margin: 0 0 10rem 0;
+  }
+}
+
+
+/* Header */
+.site-header {
+  display: flex;
+  height: 70%;
+  background: white;
+  @media (max-width: 700px) {
+    height: auto;
+    display: block;
+    .header-content,
+    .hero-graphic {
+      width: 100%;
+    }
+    .hero-graphic {
+      height: 200px;
+    }
+    .title-area {
+      order: 1;
+    }
+    .toc {
+      order: 2;
+      background: #eee;
+      margin: 1rem -2rem 0;
+      padding: 1rem 2rem;
+    }
+  }
+}
+.header-content {
+  width: 70%;
+}
+.hero-graphic {
+  width: 50%;
+  // this should default to a small graphic (or nothing)
+  // background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/burgers.jpg);
+  background-size: cover;
+  @media (min-width: 900px) {
+    // use a HUGE one!
+  }
+  @media (min-width: 600px) {
+    // use a MEDIUM one!
+    // you get it.
+  }
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.title-area {
+  order: 2;
+  > p {
+    color: red;
+  }
+}
+.byline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  > span {
+    color: #999;
+  }
+}
+
+/* Nav */
+.toc {
+  > ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.6;
+    > li {
+      display: inline-block;
+      counter-increment: nav;
+      > a {
+        text-decoration: none;
+        color: #333;
+        text-transform: uppercase;
+        font-size: 16px;
+        &::before {
+          content: "/";
+          margin: 0 0.5rem;
+          color: red;
+        }
+        &::after {
+          // content: counter(nav);
+          font-weight: bold;
+          margin: 0 0.5rem;
+        }
+        &:hover,
+        &:focus {
+          color: red;
+        }
+      }
+      &:first-child {
+        a::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
