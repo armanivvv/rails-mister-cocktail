@@ -1,20 +1,23 @@
 <%= link_to 'Add cocktail', new_cocktail_path %>
 <%#= link_to cocktail.name, cocktail_path(cocktail) %>
+<!-- /*url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat*/ -->
 
   <div class="container">
     <div class="row">
       <div class="card-container">
       <% @cocktails.each do |cocktail| %>
         <div class="style card">
-          <div class="wrapper" style="background: <%= cl_image_tag(cocktail.photo, width: 300, height: 400, crop: :fill) %>
-          /*url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat*/;">
+          <div class="wrapper">
+          <div class="wrapperimage">
+            <%= cl_image_tag(cocktail.photo, width: 300, height: 340, crop: :fill) %>
+          </div>
             <div class="header">
               <ul class="menu-content">
                 <li>
-                  <a href="#"><i class="fa fa-bookmark-o"></i></a>
+                  <a href="#" class="fa fa-bookmark-o"></a>
                 </li>
-                <li><a href="#"><i class="fa fa-heart-o"></i><span>18</span></a></li>
-                <li><a href="#"><i class="fa fa-comment-o"></i><span>3</span></a></li>
+                <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
               </ul>
             </div>
             <div class="data">

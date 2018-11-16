@@ -34,7 +34,7 @@
   }
   .wrapper {
     background-color: $white;
-    min-height: 340px;
+    max-height: 340px;
     position: relative;
     overflow: hidden;
     margin-bottom: 20px;
@@ -44,6 +44,11 @@
         transform: translateY(0);
       }
     }
+  }
+  .wrapperimage{
+  background: center;
+  background: cover;
+  background: no-repeat;
   }
   .data {
     position: absolute;
